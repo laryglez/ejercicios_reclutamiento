@@ -38,6 +38,7 @@ hacer un análisis de cuál de los dos términos es el más usado en los dominio
 <ol>
 <li> Declarar variable para contar gatos </li>
 <li> Declarar variable para contar perros </li>
+<li> Validar que el archivo domain.txt es un txt </li>
 <li> Abrir el archivo domain.txt </li>
 <li> Por cada fila del archivo </li>
 <ul>
