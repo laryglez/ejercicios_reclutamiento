@@ -36,7 +36,7 @@ $pageContents = <<< EOPAGE
   </div>
 
   <div class="list-group">
-	<a href="{$baseT}{$theorical}" class="list-group-item list-group-item-action"> Number 1 </a>
+	<a href="{$baseT}{$theorical}" class="list-group-item list-group-item-action"> Dogs vs cats </a>
   </div>
 
   <div class="alert alert-primary mt-5" role="alert">
