@@ -192,47 +192,48 @@ if ( isset( $_POST[ 'team1' ] ) && $flag ) {
 
 $pageContents = <<< EOPAGE
 <!DOCTYPE html>
-<html lang = 'en'>
+<html lang="en">
 <head>
-<meta charset = 'UTF-8'>
-<meta http-equiv = 'X-UA-Compatible' content = 'IE=edge'>
-<meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'>
-<link rel = 'stylesheet' href = 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css' integrity = 'sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N' crossorigin = 'anonymous'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-<title> Soccer clasification </title>
+    <title> Soccer clasification </title>
 </head>
 
 <body>
-<div class = 'container mt-5'>
-<div>
-<h1> Soccer clasification </h1>
-<form action = '#' method = 'post'>
-<label>Team 1:</label>
-<input type = 'text' name = 'team1' />
-<label>Score 1:</label>
-<input type = 'text' name = 'score1' />
-<br/>
-<label>Team 2:</label>
-<input type = 'text' name = 'team2' />
-<label>Score 2:</label>
-<input type = 'text' name = 'score2' />
-<br/>
-<button type = 'submit' class = 'btn btn-primary btn-sm'>Send</button>
-<a href = '/' class = 'btn btn-primary btn-sm' role = 'button'>Back</a>
-</form>
- {
-    $result}
-    </div>
-    </div>
+<div class="container mt-5">
+  <div>
+    <h1> Soccer clasification </h1>
+    <form action="#" method="post">
+        <label>Team 1:</label>
+        <input type="text" name="team1" />
+        <label>Score 1:</label>
+        <input type="text" name="score1" />
+        <br/>
+        <label>Team 2:</label>
+        <input type="text" name="team2" />
+        <label>Score 2:</label>
+        <input type="text" name="score2" />
+        <br/>
+        <button type="submit" class="btn btn-primary btn-sm">Send</button>
+        <a href="/" class="btn btn-primary btn-sm" role="button">Back</a>
+    </form>
+    {$result}
+  </div>
+</div>
 
-    EOPAGE;
+EOPAGE;
 
-    $pageContents .= <<< EOPAGEC
 
-    </body>
-    </html>
-    EOPAGEC;
 
-    echo $pageContents;
+$pageContents .= <<< EOPAGEC
 
-    ?>
+</body>
+</html>
+EOPAGEC;
+
+echo $pageContents;
+
+?>

@@ -56,48 +56,48 @@ function ror( $num ) {
     return $remainder.$quotient;
 }
 
+
 $pageContents = <<< EOPAGE
 <!DOCTYPE html>
-<html lang = 'en'>
+<html lang="en">
 <head>
-<meta charset = 'UTF-8'>
-<meta http-equiv = 'X-UA-Compatible' content = 'IE=edge'>
-<meta name = 'viewport' content = 'width=device-width, initial-scale=1.0'>
-<link rel = 'stylesheet' href = 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css' integrity = 'sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N' crossorigin = 'anonymous'>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-<title> Super prime numbers </title>
+    <title> Super prime numbers </title>
 </head>
 
 <body>
-<div class = 'container mt-5'>
-<div>
-<h1> Super prime numbers </h1>
-<form action = '#' method = 'post'>
-<label>Enter the number:</label>
-<input type = 'text' name = 'number' />
-<br/>
-<button type = 'submit' class = 'btn btn-primary btn-sm'>Send</button>
-<a href = '/' class = 'btn btn-primary btn-sm' role = 'button'>Back</a>
-
-</form>
- {
-    $result}
+  <div class="container mt-5">
+    <div>
+      <h1> Super prime numbers </h1>
+      <form action="#" method="post">
+        <label>Enter the number:</label>
+        <input type="text" name="number" />
+        <br/>
+        <button type="submit" class="btn btn-primary btn-sm">Send</button>
+        <a href="/" class="btn btn-primary btn-sm" role="button">Back</a>
+        
+    </form>
+    {$result}
     </div>
-    </div>
+  </div>
 
-    EOPAGE;
+EOPAGE;
 
-    if ( isset( $_POST[ 'number' ] ) )
- {
+if(isset($_POST['number']))
+{
+  
+}
 
-    }
+$pageContents .= <<< EOPAGEC
 
-    $pageContents .= <<< EOPAGEC
+</body>
+</html>
+EOPAGEC;
 
-    </body>
-    </html>
-    EOPAGEC;
+echo $pageContents;
 
-    echo $pageContents;
-
-    ?>
+?>
