@@ -2,9 +2,13 @@
 $result = '';
 if ( isset( $_POST[ 'decimal' ] ) ) {
     $decimal = $_POST[ 'decimal' ];
-    $next = nextPeriodic( $decimal );
-
-    $result = "<p class='mt-5'> Next periodic is {$next} </p>";
+    if( is_numeric( $decimal ) && (int) $decimal == $decimal ) {
+        $next = nextPeriodic( $decimal );
+        $result = "<p class='mt-5'> Next periodic is {$next} </p>";
+    } else {
+        $result = "<p class='mt-5'> There is not a number </p>";
+    }
+    
 }
 
 function nextPeriodic( $decimal ) {

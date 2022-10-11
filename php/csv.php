@@ -14,28 +14,29 @@ if ( isset( $_POST[ 'csv' ] ) && isset( $_POST[ 'column' ] ) ) {
 }
 
 function sort_csv( $csv, $column ) {
-    $data = explode( '\\n', $csv );
-    $data_array = array();
-    foreach ( $data as $row )
- {
-        $data_array [] = explode( ',', $row );
+  $data = explode( '\\n', $csv );
+  $data_array = array();
+  foreach ( $data as $row ) {
+    $data_array [] = explode( ',', $row );
+  }
+  foreach ( $data_array as $row ) {
+    if ( count( $row ) <= $column ) {
+      throw new Exception( 'Column does not exist in any row.' );
     }
-    if ( count( $data_array[ 0 ] ) <= $column )
- {
-        throw new Exception( 'Column does not exist.' );
-    }
-    $aux = array();
-    foreach ( $data_array as $key => $fila ) {
-        $aux[ $key ] = $fila[ $column ];
-    }
-    array_multisort( $aux, SORT_ASC, $data_array );
+  }
+  
+  $aux = array();
+  foreach ( $data_array as $key => $fila ) {
+    $aux[ $key ] = $fila[ $column ];
+  }
+  array_multisort( $aux, SORT_ASC, $data_array );
 
-    $result = array();
-    foreach ( $data_array as $row ) {
-        $result[] = implode( ',', $row );
-    }
+  $result = array();
+  foreach ( $data_array as $row ) {
+    $result[] = implode( ',', $row );
+  }
 
-    return $result;
+  return $result;
 }
 
 $pageContents = <<< EOPAGE

@@ -42,7 +42,7 @@ $pageContents = <<< EOPAGE
   <div>
     <h1> Delete from list </h1>
     <form action="#" method="post">
-        <label>Enter the numbers separated by (,):</label>
+        <label>Enter the elements separated by (,):</label>
         <input type="text" name="list" />
         <br/>
         <button type="submit" class="btn btn-primary btn-sm">Send</button>

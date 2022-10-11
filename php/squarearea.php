@@ -1,25 +1,40 @@
 <?php
 $result = '';
 if ( isset( $_POST[ 'coordinates' ] ) ) {
-    $coordinates = $_POST[ 'coordinates' ];
-    $coordinates = explode( ',', $coordinates );
+  $coordinates = $_POST[ 'coordinates' ];
+  $coordinates = explode( ',', $coordinates );
 
+  $flag = false;
+  if( count( $coordinates ) != 8 ) {
+    $result = "<p class='mt-5'>There must be exactly 4 coordinates </p>"; 
+    $flag = true; 
+  }
+
+  foreach ( $coordinates as $number ) {
+    if( ! is_numeric( $number ) ) {
+      $result = "<p class='mt-5'>Some value is not a number </p>";
+      $flag = true;
+    }
+  }
+  if( ! $flag ) {
     $area = intersectionArea( $coordinates[ 0 ], $coordinates[ 1 ], $coordinates[ 2 ], $coordinates[ 3 ], $coordinates[ 4 ], $coordinates[ 5 ], $coordinates[ 6 ], $coordinates[ 7 ] );
     $result = "<p class='mt-5'>Intersection area is {$area} </p>";
+  }  
+    
 }
 
 function intersectionArea( $x1, $y1, $x2, $y2, $x3, $y3, $x4, $y4 ) {
-    $x_max = max( array( $x1, $x2, $x3, $x4 ) );
-    $y_max = max( array( $y1, $y2, $y3, $y4 ) );
+  $x_max = max( array( $x1, $x2, $x3, $x4 ) );
+  $y_max = max( array( $y1, $y2, $y3, $y4 ) );
 
-    $x_side = abs( $x1-$x2 ) + abs( $x3-$x4 ) - $x_max;
-    $y_side = abs( $y1-$y2 ) + abs( $y3-$y4 ) - $y_max;
+  $x_side = abs( $x1-$x2 ) + abs( $x3-$x4 ) - $x_max;
+  $y_side = abs( $y1-$y2 ) + abs( $y3-$y4 ) - $y_max;
 
-    if ( $x_side > 0 && $y_side > 0 ) {
-        return $x_side * $y_side;
-    } else {
-        return 0;
-    }
+  if ( $x_side > 0 && $y_side > 0 ) {
+      return $x_side * $y_side;
+  } else {
+      return 0;
+  }    
 }
 
 $pageContents = <<< EOPAGE

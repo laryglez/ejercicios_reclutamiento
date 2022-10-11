@@ -1,13 +1,17 @@
 <?php
 $result = '';
 if ( isset( $_POST[ 'number' ] ) ) {
-    $number = $_POST[ 'number' ];
+  $number = $_POST[ 'number' ];
+  if( is_numeric( $number ) && (int) $number == $number ) {
     $amount = countSuperPrime( $number );
     if ( $amount == 1 ) {
         $result = "<p class='mt-5'>There is {$amount} super prime number until {$number} </p>";
     } else {
         $result = "<p class='mt-5'>There are {$amount} super prime numbers until {$number} </p>";
     }
+  } else {
+    $result = "<p class='mt-5'>There is not a number </p>";
+  }  
 }
 
 function countSuperPrime( $number ) {
@@ -17,6 +21,7 @@ function countSuperPrime( $number ) {
             $amount++;
         }
     }
+
     return $amount;
 }
 
@@ -44,6 +49,7 @@ function prime( $num ) {
             return false;
         }
     }
+    
     return true;
 }
 
